@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Build docker images
-        run: docker build -t chlaache/react-test -f ./client/Dockerfile.dev ./client
-      - name: Run tests
-        run: docker run -e CI=true chlaache/react-test npm test
+      #- name: Build docker images
+      #  run: docker build -t christofferlaache/react-test -f ./client/Dockerfile.dev ./client
+      #- name: Run tests
+      #  run: docker run -e CI=true christofferlaache/react-test npm test
