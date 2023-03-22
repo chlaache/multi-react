@@ -19,11 +19,3 @@ jobs:
         run: docker build -t chlaache/react-test -f ./client/Dockerfile.dev ./client
       - name: Run tests
         run: docker run -e CI=true chlaache/react-test npm test
-      - name: Build client
-        run: docker build -t chlaache/multi-client ./client
-      - name: Build nginx
-        run: docker build -t chlaache/multi-nginx ./nginx
-      - name: Build server
-        run: docker build -t chlaache/multi-server ./server
-      - name: Build worker
-        run: docker build -t chlaache/multi-worker ./worker
