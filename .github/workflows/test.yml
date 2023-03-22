@@ -1,0 +1,21 @@
+name: Test Complex
+on:
+  pull_request:
+    branches: master
+    types: [opened, reopened]
+    
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Build docker images
+        run: docker build -t chlaache/react-test -f ./client/Dockerfile.dev ./client
+      - name: Run tests
+        run: docker run -e CI=true chlaache/react-test npm test

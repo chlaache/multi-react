@@ -1,0 +1,25 @@
+name: Test Complex
+on:
+  push:
+    branches:
+      - master
+    
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Build client
+        run: docker build -t chlaache/multi-client ./client
+      - name: Build nginx
+        run: docker build -t chlaache/multi-nginx ./nginx
+      - name: Build server
+        run: docker build -t chlaache/multi-server ./server
+      - name: Build worker
+        run: docker build -t chlaache/multi-worker ./worker
