@@ -25,6 +25,7 @@
     {
       "name": "nginx",
       "image": "christofferlaache/multi-nginx",
+      "hostname": "nginx",
       "memory": 128,
       "essential": true,
       "portMappings": [
