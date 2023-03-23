@@ -1,4 +1,4 @@
-name: Deploy Complex
+name: Push Complex docker images
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   test:
-    name: deploy apps
+    name: push docker images
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
