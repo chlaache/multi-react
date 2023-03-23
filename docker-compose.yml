@@ -1,11 +1,11 @@
 version: "3"
 services:
   client:
-    image: "christofferlaache/multi-client"
+    image: "christofferlaache/multi-client:latest"
     mem_limit: 128m
     hostname: client
   server:
-    image: "christofferlaache/multi-server"
+    image: "christofferlaache/multi-server:latest"
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "christofferlaache/multi-worker"
+    image: "christofferlaache/multi-worker:latest"
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "christofferlaache/multi-nginx"
+    image: "christofferlaache/multi-nginx:latest"
     mem_limit: 128m
     hostname: nginx
     ports:
