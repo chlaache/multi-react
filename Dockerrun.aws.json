@@ -5,27 +5,27 @@
       "name": "client",
       "image": "christofferlaache/multi-client",
       "hostname": "client",
-      "mem_limit": "128m",
+      "memory": 128,
       "essential": false
     },
     {
       "name": "server",
       "image": "christofferlaache/multi-server",
       "hostname": "api",
-      "mem_limit": "128m",
+      "memory": 128,
       "essential": false
     },
     {
       "name": "worker",
       "image": "christofferlaache/multi-worker",
       "hostname": "worker",
-      "mem_limit": "128m",
+      "memory": 128,
       "essential": false
     },
     {
       "name": "nginx",
       "image": "christofferlaache/multi-nginx",
-      "mem_limit": "128m",
+      "memory": 128,
       "essential": true,
       "portMappings": [
         {
